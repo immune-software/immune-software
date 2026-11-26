@@ -1,0 +1,17 @@
+name: board
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  board:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: bash board.sh > BOARD.md
+      - run: |
+          git add BOARD.md
+          git diff --cached --quiet || git -c user.name=board -c user.email=board@localhost commit -m board
+          git push
