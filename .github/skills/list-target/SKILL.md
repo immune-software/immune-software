@@ -2,7 +2,7 @@
 name: list-target
 description: "List a sealed proof-of-security target on a board: push the audited image, confirm anyone can pull it, read its registry digest, confirm the bounty address is funded, write the manifest, check the board row and prepare the pull request. Use when asked to publish, list or submit a target or bounty, to check its funding, to write a target manifest, or to open a board pull request. Push, package visibility, funding and the pull request stay human steps."
 metadata:
-  version: "1.0.1"
+  version: "1.0.2"
 ---
 
 # List a target
@@ -26,10 +26,10 @@ flowchart LR
 
 ## Steps
 
-`NAME` = the local image tag from seal-target. `OWNER` = the ghcr.io namespace. `BOARD` = a local clone of your fork of the board repository.
+`NAME` = the local image tag from seal-target. `OWNER` = the ghcr.io namespace. `BOARD` = a local clone of the board repository, or of your fork.
 
 ```bash
-NAME=hello-age OWNER=your-github-user BOARD=~/code/proof-of-security-board
+NAME=hello-age OWNER=real-immune-software BOARD=~/code-immune-software/immune-software
 ADDRESS=$(docker run --rm "$NAME" cat /bounty/address)
 ```
 

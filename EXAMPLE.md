@@ -9,7 +9,7 @@ command -v docker jq
 ```
 
 ```bash
-OWNER=your-github-user   # ghcr.io namespace
+OWNER=real-immune-software   # ghcr.io namespace: your GitHub user
 ```
 
 ## Vendor: four steps
